@@ -1,55 +1,47 @@
 import { Carousel } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import banner1 from "../assets/IMG_3390.jpg";
 import banner2 from "../assets/IMG_3391.jpg";
-//import banner3 from "../assets/banner3.jpg";
 
 function Home() {
   return (
     <div>
-      {/* Carousel Banner */}
-      <div id="homeCarousel" className="carousel slide mb-5" data-bs-ride="carousel" style={{ maxHeight: '400px', overflow: 'hidden' }}>
-  <div className="carousel-inner">
-    <div className="carousel-item active">
-      <img
-        src={banner1}
-        className="d-block w-100"
-        alt="Banner 1"
-        style={{ objectFit: 'cover', height: '400px' }}
-      />
-    </div>
-    <div className="carousel-item">
-      <img
-        src={banner2}
-        className="d-block w-100"
-        alt="Banner 2"
-        style={{ objectFit: 'cover', height: '400px' }}
-      />
-    </div>
-  </div>
-  {/* Controls */}
-  <button className="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-    <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Previous</span>
-  </button>
-  <button className="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-    <span className="carousel-control-next-icon" aria-hidden="true"></span>
-    <span className="visually-hidden">Next</span>
-  </button>
-</div>
+      {/* Carousel */}
+      <Carousel>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={banner1}
+            alt="Banner 1"
+            style={{ height: '400px', objectFit: 'cover' }}
+          />
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100"
+            src={banner2}
+            alt="Banner 2"
+            style={{ height: '400px', objectFit: 'cover' }}
+          />
+        </Carousel.Item>
+      </Carousel>
 
-
-      {/* Content bawah carousel */}
+      {/* Content */}
       <div className="text-center p-5">
         <h1 className="fw-bold">Belajar Jadi Seronok 🎉</h1>
         <p className="lead">Home & Online Tuition</p>
 
-        <a href="/quiz" className="btn btn-primary btn-lg m-2">
+        {/* Internal link pakai Link */}
+        <Link to="/quiz" className="btn btn-primary btn-lg m-2">
           🎯 Cuba Mini Quiz
-        </a>
+        </Link>
 
+        {/* External link tetap guna a */}
         <a
           href="https://wa.me/60123456789"
           className="btn btn-success btn-lg m-2"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           WhatsApp Tutor
         </a>
